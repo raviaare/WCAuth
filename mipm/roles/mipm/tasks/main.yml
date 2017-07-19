@@ -1,0 +1,20 @@
+---
+
+- name: Download mipm bundle
+  get_url:
+    url: http://example.com/path/file.conf
+    dest: /tmp
+    mode: 0440
+
+
+- name: mipm state save command
+  command: mipm state save --role my_server_role --release 0.0.1 
+
+- name: mipm state save command with publish option
+  command: mipm state save --role my_server_role --release 0.0.1 --publish
+
+- name: mipm state publish command
+  command: mipm state publish --role my_server_role-0.0.1.json 
+
+- name: mipm state install command
+  command: mipm state install --role my_server_role-0.0.1 

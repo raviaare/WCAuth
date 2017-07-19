@@ -1,0 +1,7 @@
+---
+    
+    - name: copy handler
+      copy:
+        src: ~/handler
+        dest: /tmp/handler
+

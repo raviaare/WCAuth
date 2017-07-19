@@ -1,0 +1,19 @@
+---
+
+- name: Download mipm bundle
+  get_url:
+    url: http://example.com/path/file.conf
+    dest: /tmp
+    mode: 0440
+
+
+- name: Download mipm bundle
+  unarchive:
+    src: /tmp/mipm.tar.gz
+    dest: /tmp
+
+- name: install mipm package through command 
+  command: installWindows.bat
+  args:
+    chdir: /tmp
+    creates: E:\miPlatform\mipm

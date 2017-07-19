@@ -1,0 +1,25 @@
+---
+- name: Install IIS 
+  win_feature:
+    name: "Install-Oracle_client"
+    state: present
+
+- name: listener.ora
+  win_template:
+    src: /mytemplates/file.conf.j2
+    dest: C:\temp\file.conf
+
+- name: tnsnames.ora
+  win_template:
+    src: /mytemplates/file.conf.j2
+    dest: C:\temp\file.conf
+
+- name: sqlnet.ora
+  win_template:
+    src: /mytemplates/file.conf.j2
+    dest: C:\temp\file.conf
+
+- name: Create directory structure
+  win_file:
+    path: C:\Temp\folder\subfolder
+    state: directory

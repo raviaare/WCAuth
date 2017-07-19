@@ -1,0 +1,22 @@
+---
+    
+    - name: install pre-compiled binaries
+      gem:
+    	name: "{{ item }}"
+    	state: present
+        with_items:
+           - win32-api
+           - win32-service
+
+    - name: install the rest
+      gem:
+    	name: "{{ item }}"
+    	state: present
+        with_items:
+           - windows-api
+           - windows-pr
+           - win32-dir
+           - win32-event
+           - win32-mutex
+
+    - include: reboot_handler.yml
